@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "alugueljogos_backend": {
+      "main": "src/alugueljogos_backend/main.mo",
+      "type": "motoko"
+    },
+    "alugueljogos_frontend": {
+      "dependencies": [
+        "alugueljogos_backend"
+      ],
+      "source": [
+        "src/alugueljogos_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "alugueljogos_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
