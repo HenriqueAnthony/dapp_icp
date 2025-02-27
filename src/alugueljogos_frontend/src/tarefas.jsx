@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-//import { alugueljogos_backend } from 'declarations/alugueljogos_backend';
 import { alugueljogos_backend } from '../../declarations/alugueljogos_backend';
 
 function tarefas() {
@@ -9,8 +8,9 @@ function tarefas() {
     consultarTarefas();
   }, []);
   
-  async function consultarTarefas(){
-      setTarefas(await alugueljogos_backend.getTarefas());    
+  async function consultarTarefas() {
+    const tarefasAtualizadas = await alugueljogos_backend.getTarefas();
+    setTarefas(tarefasAtualizadas); // Atualiza o estado
   }
 
   async function handleSubmit(event) {
@@ -41,8 +41,9 @@ function tarefas() {
 
   }
 
-  async function excluir(id) {        
-    await to_do_backend.excluirTarefa( parseInt(id));    
+  async function excluir(id) {
+    console.log("Excluindo tarefa com ID:", id); // Depuração
+    await alugueljogos_backend.excluirTarefa(parseInt(id));
     consultarTarefas();
   }
 
