@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "autenticador_backend": {
+      "main": "src/autenticador_backend/main.mo",
+      "type": "motoko"
+    },
+    "autenticador_frontend": {
+      "dependencies": [
+        "autenticador_backend"
+      ],
+      "source": [
+        "src/autenticador_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "autenticador_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
